@@ -1,4 +1,6 @@
-﻿Console.WriteLine("Escape Room");
+﻿using EscapeRoom;
+
+Console.WriteLine("Escape Room");
 
 //Jeder Schüler schreibt nach dem Kommentar mit seiner Nummer den Aufruf seiner Klasse für das Lösen
 //des Objektes im Escape Room.
@@ -19,6 +21,8 @@ while (ct<8)
     {
         case 0:
             //Beispiel
+            Beispiel b = new Beispiel();
+            b.BeispielMethode();
             ct++;
             geloest[0] = true;
             break;
