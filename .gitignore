@@ -1,0 +1,50 @@
+# ==========================================
+# Escape Room C# - Visual Studio 2026
+# ==========================================
+
+# Visual Studio solution and project files
+*.csproj
+*.sln
+*.slnx
+*.csproj.user
+
+# Visual Studio user-specific files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Build results
+**/bin/
+**/obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]uild/
+
+# .NET generated files
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.tmp
+*.deps.json
+*.runtimeconfig.json
+
+# Visual Studio Code
+.vscode/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.bak
+*.swp
+*.swo
+*~
