@@ -112,5 +112,5 @@ while (ct<8)
             break;
         }
     }
-Console.WriteLine("Herzlichen Glückwunsch!");
+Console.WriteLine("Herzlichen Glückwunsch!!!");
 Console.WriteLine("Ihr habt den Escape Room geschafft!");
