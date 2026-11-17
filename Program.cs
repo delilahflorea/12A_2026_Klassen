@@ -51,7 +51,13 @@ while (ct<8)
             //8
             break;
         case 9:
-            //9
+            Console.WriteLine("Gib eine Zahl zwichen 2 und 27 ein:");
+            int s = Convert.ToInt32(Console.ReadLine());
+            Palindrom_Code_09 ab = new Palindrom_Code_09();
+            Palindrom_Code_09 bb = new Palindrom_Code_09(s);
+
+            bb.Palindrom();
+            bb.welcheZahl();
             break;
         case 10:
             //10
