@@ -29,9 +29,9 @@ class Palindrom_Code_09
     public void grmitte(int code)
     {
         if (code / 10 % 10 >= 5)
-            Console.Write("groser oder gleich 5");    
+            Console.Write("groser oder gleich 5 ");    
         else
-            Console.Write("kleiner als 5");
+            Console.Write("kleiner als 5 ");
         Console.WriteLine();
     }
     public void Palindrom()
