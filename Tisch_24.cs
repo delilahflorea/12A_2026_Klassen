@@ -1,46 +1,59 @@
+
 using System;
 
-public class Zahlenschloss123
+namespace EscapeRoom
 {
-    // 3 Daten
-    public int Code;
-    public string Farbe;
-    public bool Offen;
-
-    // 1. Konstruktor
-    public Zahlenschloss123()
+    internal class Toader24
     {
-        Code = 1234;
-        Farbe = "Rot";
-        Offen = false;
-    }
-
-    // 2. Konstruktor
-    public Zahlenschloss123(int code, string farbe, bool offen)
-    {
-        Code = code;
-        Farbe = farbe;
-        Offen = offen;
-    }
-
-    // 1. Methode: Code überprüfen
-    public bool CodePruefen(int eingabe)
-    {
-        return eingabe == Code;
-    }
-
-    // 2. Methode: Schloss öffnen
-    public void Oeffnen(int eingabe)
-    {
-        if (CodePruefen(eingabe))
+        public class Zahlenschloss123   // 3 Daten
         {
-            Offen = true;
-            Console.WriteLine("Schloss geöffnet!");
-        }
-        else
-        {
-            Console.WriteLine("Falscher Code!");
+            public int Code;
+            public string Farbe;
+            public bool Offen;
+
+            public Zahlenschloss123()   // 1. Konstruktor
+            {
+                Code = 1014;
+                Farbe = "Rot";
+                Offen = false;
+            }
+
+            public Zahlenschloss123(int code, string farbe, bool offen)   // 2. Konstruktor
+            {
+                Code = code;
+                Farbe = farbe;
+                Offen = offen;
+            }
+
+            public bool CodePruefen(int eingabe)   // 1. Methode
+            {
+                if (eingabe < 1000 || eingabe > 9999)
+                {
+                    return false;
+                }
+
+                int z1 = eingabe / 1000;
+                int z2 = (eingabe / 100) % 10;
+                int z3 = (eingabe / 10) % 10;
+                int z4 = eingabe % 10;
+
+                int summe = z1 + z2 + z3 + z4;
+
+                return eingabe % 13 == 0 && summe % 3 == 0;
+            }
+
+            public void Oeffnen(int eingabe)
+            {
+                if (CodePruefen(eingabe))
+                {
+                    Offen = true;
+                    Console.WriteLine("Schloss geöffnet!");
+                }
+                else
+                {
+                    Console.WriteLine("Falscher Code! Versuch es noch einmal.");
+                }
+            }
         }
     }
 }
-
