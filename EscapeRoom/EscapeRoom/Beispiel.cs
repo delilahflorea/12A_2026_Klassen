@@ -8,7 +8,7 @@ namespace EscapeRoom
     {
         public void BeispielMethode()
         {
-            Console.WriteLine("Dies ist ein Beispiel!");
+            Console.WriteLine("Dies ist ein Beispiel1!");
         }
     }
 }
