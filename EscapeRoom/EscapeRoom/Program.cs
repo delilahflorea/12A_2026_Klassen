@@ -51,7 +51,18 @@ while (ct<8)
             //8
             break;
         case 9:
-            //9
+            {
+                Mihai_09 aa = new Mihai_09(0);
+                aa.schreiben();
+                int s = Convert.ToInt32(Console.ReadLine());
+                Mihai_09 bb = new Mihai_09(s);
+
+                bb.Palindrom();
+                bb.welcheZahl();
+
+                ct++;
+                geloest[9] = true;
+            }
             break;
         case 10:
             //10
