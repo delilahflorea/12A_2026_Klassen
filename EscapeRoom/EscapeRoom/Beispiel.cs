@@ -11,7 +11,7 @@ namespace EscapeRoom
         //Eine private Methode, eine public Methode - ruft die private Methode auf
 
         protected int x = 0; string y = "";
-        protected string z = "basis";
+        protected string z = "Basis";
         public Beispiel()
         {
 
@@ -30,7 +30,7 @@ namespace EscapeRoom
 
         private void MetPrivate()
         {
-            Console.WriteLine("Private Methode");
+            Console.WriteLine("Private Methode in der Basisklasse!");
         }
 
         protected void MethodePublic()
