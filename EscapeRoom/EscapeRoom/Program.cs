@@ -102,7 +102,10 @@ while (ct<8)
             //25
             break;
         case 26:
-            //26
+            Tuca_26 puzzle = new Tuca_26();
+            puzzle.Basis6();
+            ct++;
+            geloest[26] = true;
             break;
         case 27:
             //27
