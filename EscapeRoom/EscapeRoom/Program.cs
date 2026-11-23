@@ -90,7 +90,10 @@ while (ct<8)
             //21
             break;
         case 22:
-            //22
+            Albert a = new Albert();
+            a.AlbertMethode();
+            ct++;
+            geloest[22] = true;
             break;
         case 23:
             //23
@@ -110,7 +113,8 @@ while (ct<8)
         default:
             Console.WriteLine("Diese Klasse existiert nicht!");
             break;
-        }
+        } 
     }
-Console.WriteLine("Herzlichen Glückwunsch!!!");
+
+Console.WriteLine("Herzlichen Glückwunsch!");
 Console.WriteLine("Ihr habt den Escape Room geschafft!");
