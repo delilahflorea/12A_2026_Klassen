@@ -57,7 +57,7 @@ namespace EscapeRoom
         {
             Console.WriteLine("Dies ist die Albert-Methode.");
 
-            int[,] mat = new int[5, 5] { { 0, 1, 1, 0, 0 }, { 0, 0, 1, 1, 0 }, { 0, 0, 0, 1, 1 }, { 1, 0, 0, 0, 1 }, { 1, 1, 0, 0, 0 } };
+            int[,] mat = new int[5, 5] { { 0, 1, 1, 0, 0 }, { 0, 0, 1, 0, 0 }, { 0, 0, 0, 1, 0 }, { 0, 0, 0, 0, 1 }, { 1, 0, 0, 0, 0 } };
 
             Console.WriteLine("Die Adjazenzmatrix ist:");
             for (int i = 0; i < 5; i++)
@@ -72,12 +72,12 @@ namespace EscapeRoom
             bool ersteAufgabeGeloest = false;
             while (!ersteAufgabeGeloest)
             {
-                Console.WriteLine("Gibt es einen eulerischen Zyklus in diesem Graphen? (ja/nein)");
+                Console.WriteLine("Gibt es einen Hamiltonischen Zyklus in diesem Graphen? (ja/nein)");
                 string antwort = (Console.ReadLine() ?? string.Empty).Trim();
 
                 if (antwort.Equals("ja", StringComparison.OrdinalIgnoreCase))
                 {
-                    Console.WriteLine("Richtig! Es gibt einen eulerischen Zyklus.");
+                    Console.WriteLine("Richtig! Es gibt einen Hamiltonischen Zyklus.");
                     ersteAufgabeGeloest = true;
                 }
                 else
@@ -91,14 +91,14 @@ namespace EscapeRoom
 
 
             int[,] mat2 = new int[10, 10] { { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
-                                            { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+                                            { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                                             { 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 },
-                                            { 1, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
-                                            { 1, 1, 1, 1, 0, 1, 1, 1, 1, 1 },
-                                            { 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 },
-                                            { 1, 1, 1, 1, 1, 1, 0, 1, 1, 1 },
-                                            { 1, 1, 1, 1, 1, 1, 1, 0, 1, 1 },
-                                            { 1, 1, 1, 1, 1, 1, 1, 1, 0, 1 },
+                                            { 0, 0, 1, 0, 1, 0, 0, 0, 0, 0 },
+                                            { 0, 0, 0, 0, 0, 1, 0, 0, 0, 0 },
+                                            { 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 },
+                                            { 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 },
+                                            { 0, 0, 0, 0, 1, 0, 0, 0, 1, 1 },
+                                            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                                             { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
             };
 
@@ -112,21 +112,26 @@ namespace EscapeRoom
                 Console.WriteLine();
             }
 
-            // Vordefinierte minimale Lösung: genau eine Kante von 9 nach 0.
+            // Vordefinierte minimale Lösung: genau zwei Kanten werden benötigt.
             bool zweiteAufgabeGeloest = false;
             while (!zweiteAufgabeGeloest)
             {
-                Console.WriteLine("Geben Sie die Kante als 1-2 Format ein:");
-                string input = (Console.ReadLine() ?? string.Empty).Trim();
+                Console.WriteLine("Wie viele Kanten werden mindestens benötigt, damit der Graph stark konnex wird?");
+                string anzahl = (Console.ReadLine() ?? string.Empty).Trim();
+                Console.WriteLine("Geben Sie danach die beiden Kanten im Format 1-2,3-4 ein:");
+                string input = (Console.ReadLine() ?? string.Empty).Replace(" ", "");
 
-                if (input == "9-0")
+                bool richtigeKanten = input == "8-0,9-2" || input == "9-2,8-0" ||
+                                      input == "8-2,9-0" || input == "9-0,8-2";
+
+                if (anzahl == "2" && richtigeKanten)
                 {
                     Console.WriteLine("Richtig! Der Graph ist mit der minimalen Anzahl von Kanten stark konnex.");
                     zweiteAufgabeGeloest = true;
                 }
                 else
                 {
-                    Console.WriteLine("Falsch! Die minimale Lösung ist genau die Kante 9-0. Versuchen Sie es erneut.");
+                    Console.WriteLine("Falsch! Die Anzahl oder die Kanten sind nicht korrekt. Versuchen Sie es erneut.");
                 }
             }
         }
