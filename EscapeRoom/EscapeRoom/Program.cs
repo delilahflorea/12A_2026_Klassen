@@ -71,9 +71,8 @@ while (ct<8)
         case 15:
             orlea15 t = new orlea15();
             t.HinweisAnzeigen();
-            Console.WriteLine("Gib den Code ein:");
+            Console.WriteLine("Gib den Code gebildet aus Zahlen ein:");
             int antwort = Convert.ToInt32(Console.ReadLine());
-            //orlea15_2 f2= new orlea15_2();
             if (t.CodePruefen(antwort))
             {
                 ct++;
@@ -82,7 +81,6 @@ while (ct<8)
             else
             { 
                 orlea15 t1 = new orlea15();
-                //f2.neuerHinweis();
                 int antwort2 = Convert.ToInt32(Console.ReadLine());
                 if (t.CodePruefen(antwort2))
                 {
