@@ -210,7 +210,11 @@ while (ct < 8)
             //25
             break;
         case 26:
-            //26
+            Tuca26_2 puzzle2 = new Tuca26_2(Tuca26.minuten);
+            puzzle2.b10inb6();
+            ct++;
+            geloest[26] = true;
+
             break;
         case 27:
             //27
