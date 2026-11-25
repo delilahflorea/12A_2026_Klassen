@@ -87,7 +87,7 @@ while (ct<8)
             //20
             break;
         case 21:
-            Stoica_21.Start();
+            Stoica21.Start();
             ct++;
             geloest[21] = true;
             break;
