@@ -69,7 +69,27 @@ while (ct<8)
             //14
             break;
         case 15:
-            //15
+            orlea15 t = new orlea15();
+            t.HinweisAnzeigen();
+            Console.WriteLine("Gib den Code ein:");
+            int antwort = Convert.ToInt32(Console.ReadLine());
+            //orlea15_2 f2= new orlea15_2();
+            if (t.CodePruefen(antwort))
+            {
+                ct++;
+                geloest[15] = true;
+            }
+            else
+            { 
+                orlea15 t1 = new orlea15();
+                //f2.neuerHinweis();
+                int antwort2 = Convert.ToInt32(Console.ReadLine());
+                if (t.CodePruefen(antwort2))
+                {
+                    ct++;
+                    geloest[15] = true;
+                }
+            }
             break;
         case 16:
             //16
@@ -112,5 +132,5 @@ while (ct<8)
             break;
         }
     }
-Console.WriteLine("Herzlichen Glückwunsch!!!");
+Console.WriteLine("Herzlichen Glückwunsch!");
 Console.WriteLine("Ihr habt den Escape Room geschafft!");
