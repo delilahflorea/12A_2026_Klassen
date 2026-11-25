@@ -69,28 +69,34 @@ while (ct<8)
             //14
             break;
         case 15:
-            Orlea15 t = new Orlea15();
+            Orlea15_2 t = new Orlea15_2();
+
             t.HinweisAnzeigen();
-            Console.WriteLine("Gib den Code ein:");
-            int antwort = Convert.ToInt32(Console.ReadLine());
-            Orlea15_2 f2= new Orlea15_2();
-            if (t.CodePruefen(antwort))
+
+            int antwort;
+
+            for (int i = 0; i < 3; i++)
             {
-                ct++;
-                geloest[15] = true;
-            }
-            else
-            { 
-                Orlea15 t1 = new Orlea15();
-                f2.neuerHinweis();
-                int antwort2 = Convert.ToInt32(Console.ReadLine());
-                if (t.CodePruefen(antwort2))
+                Console.WriteLine("Gib den Code ein:");
+                antwort = Convert.ToInt32(Console.ReadLine());
+
+                if (t.CodePruefen(antwort))
                 {
                     ct++;
                     geloest[15] = true;
+                    break;
+                }
+                else
+                {
+                    if (i < 2)
+                    {
+                        t.neuerHinweis();
+                    }
                 }
             }
+
             break;
+
         case 16:
             //16
             break;
