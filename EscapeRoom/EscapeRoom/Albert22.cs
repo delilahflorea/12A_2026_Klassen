@@ -14,7 +14,7 @@
 
 namespace EscapeRoom
 {
-    internal class Albert
+    internal class Albert22
     {
 
 
@@ -74,7 +74,7 @@ namespace EscapeRoom
             }
 
             // Vordefinierte minimale Lösung: genau eine Kante von 9 nach 0.
-            Console.WriteLine("Geben Sie die Kante als 9-0 ein:");
+            Console.WriteLine("Geben Sie die Kante als 1-2 Format ein:");
             string input = Console.ReadLine();
 
             if (input == "9-0")

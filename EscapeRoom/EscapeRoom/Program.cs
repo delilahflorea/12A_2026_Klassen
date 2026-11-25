@@ -90,7 +90,7 @@ while (ct<8)
             //21
             break;
         case 22:
-            Albert a = new Albert();
+            Albert22 a = new Albert22();
             a.AlbertMethode();
             ct++;
             geloest[22] = true;
