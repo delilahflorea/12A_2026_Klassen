@@ -54,7 +54,14 @@ while (ct<8)
             //9
             break;
         case 10:
-            //10
+            Milea10 milea10 = new Milea10();
+            if (milea10.Start())
+            {
+                ct++;
+                geloest[10] = true;
+            }
+            break;
+
             break;
         case 11:
             //11
