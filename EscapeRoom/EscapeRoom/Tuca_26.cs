@@ -6,7 +6,7 @@ namespace EscapeRoom
 {
     internal class Tuca_26
     {
-        private int minuten;
+        public static int minuten;
         private string basis6;
         private int zahl;
         private int[] stelle = new int[180];
