@@ -106,6 +106,10 @@ while (ct<8)
             break;
         case 27:
             //27
+            Valean27 v = new Valean27();
+            v.Class1Methode();
+            ct++;
+            geloest[27] = true;
             break;
         default:
             Console.WriteLine("Diese Klasse existiert nicht!");
