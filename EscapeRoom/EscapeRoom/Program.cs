@@ -8,10 +8,10 @@ Console.WriteLine("Escape Room");
 int ct = 0;
 int antw = 0;
 bool[] geloest = new bool[28];
-while (ct<8)
+while (ct < 8)
 {
     Console.WriteLine("Klassennummereingabe (0-27):");
-    antw=Int32.Parse(Console.ReadLine());
+    antw = Int32.Parse(Console.ReadLine());
     if (antw >= 0 && antw < 28 && geloest[antw])
     {
         Console.WriteLine("Dieses Rätsel wurde bereits gelöst!");
@@ -63,7 +63,11 @@ while (ct<8)
             //12
             break;
         case 13:
-            //13
+            Nicula13 a = new Nicula13();
+            a.Nicula13methode();
+            a.Nicula13methode2_2();
+            ct++;
+            geloest[0] = true;
             break;
         case 14:
             //14
@@ -110,7 +114,7 @@ while (ct<8)
         default:
             Console.WriteLine("Diese Klasse existiert nicht!");
             break;
-        }
     }
+}
 Console.WriteLine("Herzlichen Glückwunsch!!!");
 Console.WriteLine("Ihr habt den Escape Room geschafft!");
