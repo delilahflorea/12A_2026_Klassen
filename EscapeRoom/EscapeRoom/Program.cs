@@ -39,7 +39,10 @@ while (ct<8)
             //4
             break;
         case 5:
-            //5
+            Ghircoias05 g = new Ghircoias05();
+            g.Cuvant05();
+            ct++;
+            geloest[5] = true;
             break;
         case 6:
             //6
