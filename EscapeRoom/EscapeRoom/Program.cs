@@ -91,6 +91,10 @@ while (ct<8)
             break;
         case 22:
             //22
+            Albert22 a = new Albert22();
+            a.AlbertMethode();
+            ct++;
+            geloest[22] = true;
             break;
         case 23:
             //23
@@ -199,6 +203,11 @@ while (ct < 8)
             break;
         case 22:
             //22
+            Albert22_abgeleitet albert = new Albert22_abgeleitet();
+            albert.AlbertMethode2();
+            albert.AlbertMethode3();
+            ct++;
+            geloest[22] = true;
             break;
         case 23:
             //23
