@@ -8,10 +8,10 @@ Console.WriteLine("Escape Room");
 int ct = 0;
 int antw = 0;
 bool[] geloest = new bool[28];
-while (ct<8)
+while (ct < 8)
 {
     Console.WriteLine("Klassennummereingabe (0-27):");
-    antw=Int32.Parse(Console.ReadLine());
+    antw = Int32.Parse(Console.ReadLine());
     if (antw >= 0 && antw < 28 && geloest[antw])
     {
         Console.WriteLine("Dieses Rätsel wurde bereits gelöst!");
@@ -85,6 +85,11 @@ while (ct<8)
             break;
         case 20:
             //20
+            Stecz20 r = new Stecz20();
+            r.SteczMethode1();
+            r.SteczMethode2();
+            ct++;
+            geloest[20] = true;
             break;
         case 21:
             //21
@@ -110,7 +115,7 @@ while (ct<8)
         default:
             Console.WriteLine("Diese Klasse existiert nicht!");
             break;
-        }
     }
-Console.WriteLine("Herzlichen Glückwunsch!!!");
+}
+Console.WriteLine("Herzlichen Glückwunsch!");
 Console.WriteLine("Ihr habt den Escape Room geschafft!");
