@@ -5,7 +5,7 @@
         private string _aufgabe;
         private int _cifra;
 
-        public Huditan06() : this("Sunt un număr care se citește la fel de la început și de la sfârșit. Sunt divizibil cu 2 și 3 și conțin cifra aleasă de tine. Ce număr sunt?", -1)
+        public Huditan06() : this("Screibe ein Nummer der auch von hinten gelesen werden kann und durch 2 und 3 teilbar ist", -1)
         {
         }
 
@@ -23,23 +23,23 @@
         public void Mathe()
         {
             Console.WriteLine(_aufgabe);
-            Console.Write("Introdu o cifră de la 0 la 9: ");
+            Console.Write("Schreibe eine Ziffer von 0 bis 9: ");
 
             while (!int.TryParse(Console.ReadLine(), out _cifra) || _cifra < 0 || _cifra > 9)
             {
-                Console.Write("Valoare invalidă. Introdu o cifră de la 0 la 9: ");
+                Console.Write("Ungültige Eingabe. Bitte eine Ziffer von 0 bis 9 eingeben: ");
             }
 
             int palindrom = FindePalindrom();
-            Console.Write("Scrie palindromul la care te gândești: ");
+            Console.Write("Schreibe das Palindrom, an das du denkst: ");
 
             if (int.TryParse(Console.ReadLine(), out int raspuns) && raspuns == palindrom)
             {
-                Console.WriteLine("Ai câștigat! Răspuns corect.");
+                Console.WriteLine("Du hast gewonnen! Richtiges Ergebnis.");
             }
             else
             {
-                Console.WriteLine("Ai pierdut! Răspuns greșit.");
+                Console.WriteLine("Du hast verloren! Falsche Antwort.");
             }
         }
 
