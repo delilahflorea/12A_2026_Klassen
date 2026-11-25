@@ -8,10 +8,10 @@ Console.WriteLine("Escape Room");
 int ct = 0;
 int antw = 0;
 bool[] geloest = new bool[28];
-while (ct<8)
+while (ct < 8)
 {
     Console.WriteLine("Klassennummereingabe (0-27):");
-    antw=Int32.Parse(Console.ReadLine());
+    antw = Int32.Parse(Console.ReadLine());
     if (antw >= 0 && antw < 28 && geloest[antw])
     {
         Console.WriteLine("Dieses Rätsel wurde bereits gelöst!");
@@ -93,7 +93,23 @@ while (ct<8)
             //22
             break;
         case 23:
-            //23
+            Terioiu23 tresor = new Terioiu23(1235, "Biblioteca");
+            Console.Write("Introdu codul seifului: ");
+            string textCod = Console.ReadLine();
+            int codIntrodus;
+            int.TryParse(textCod, out codIntrodus);
+            bool codCorect = tresor.VerificaCod(codIntrodus);
+
+            if (codCorect && tresor.DeschideTresor(codIntrodus))
+            {
+                Console.WriteLine("Seiful din bibliotecă a fost deschis!");
+                ct++;
+                geloest[23] = true;
+            }
+            else
+            {
+                Console.WriteLine("Codul este greșit. Seiful rămâne închis.");
+            }
             break;
         case 24:
             //24
@@ -110,7 +126,7 @@ while (ct<8)
         default:
             Console.WriteLine("Diese Klasse existiert nicht!");
             break;
-        }
     }
-Console.WriteLine("Herzlichen Glückwunsch!!!");
+}
+Console.WriteLine("Herzlichen Glückwunsch!");
 Console.WriteLine("Ihr habt den Escape Room geschafft!");
