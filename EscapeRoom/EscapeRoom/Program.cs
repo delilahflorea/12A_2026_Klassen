@@ -8,10 +8,10 @@ Console.WriteLine("Escape Room");
 int ct = 0;
 int antw = 0;
 bool[] geloest = new bool[28];
-while (ct<8)
+while (ct < 8)
 {
     Console.WriteLine("Klassennummereingabe (0-27):");
-    antw=Int32.Parse(Console.ReadLine());
+    antw = Int32.Parse(Console.ReadLine());
     if (antw >= 0 && antw < 28 && geloest[antw])
     {
         Console.WriteLine("Dieses Rätsel wurde bereits gelöst!");
@@ -24,7 +24,7 @@ while (ct<8)
             Beispiel b = new Beispiel();
             b.BeispielMethode2();
             ct++;
-           // geloest[0] = true;
+            // geloest[0] = true;
             break;
         case 1:
             //1
@@ -51,7 +51,18 @@ while (ct<8)
             //8
             break;
         case 9:
-            //9
+            {
+                Mihai_09 aa = new Mihai_09(0);
+                aa.schreiben();
+                int s = Convert.ToInt32(Console.ReadLine());
+                Mihai_09 bb = new Mihai_09(s);
+
+                bb.Palindrom();
+                bb.welcheZahl();
+
+                ct++;
+                geloest[9] = true;
+            }
             break;
         case 10:
             //10
@@ -110,8 +121,8 @@ while (ct<8)
         default:
             Console.WriteLine("Diese Klasse existiert nicht!");
             break;
-        }
     }
+}
 ct = 0;
 Console.WriteLine("Glückwunsch!!!");
 Console.WriteLine("Ihr habt den Escape Room Level 1 geschafft!\n\nEs folgt Level 2...");
@@ -159,8 +170,21 @@ while (ct < 8)
             //8
             break;
         case 9:
-            //9
-            break;
+            {
+                Mihai_09 aa = new Mihai_09(0);
+                Console.WriteLine("Gib eine Zahl zwischen 2 und 45 ein:");
+
+                int s = Convert.ToInt32(Console.ReadLine());
+
+                Mihai_09_Level2 level2 = new Mihai_09_Level2(s);
+
+                level2.Palindrom2();
+                level2.welcheZahl2();
+
+                ct++;
+                geloest[9] = true;
+                break;
+            }
         case 10:
             //10
             break;
@@ -222,3 +246,4 @@ while (ct < 8)
     Console.WriteLine("Herzlichen Glückwunsch!!!");
     Console.WriteLine("Ihr habt den Escape Room geschafft!");
 }
+

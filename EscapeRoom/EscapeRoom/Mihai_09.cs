@@ -1,0 +1,111 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace EscapeRoom
+{
+    class Mihai_09
+    {
+        int code;
+        int summe;
+        int versuche;
+        int[] pali = new int[90];
+        Random r = new Random();
+        string instruktionen = "Gib eine Zahl zwichen 2 und 27 ein:";
+
+        public void schreiben()
+        {
+            Console.WriteLine(instruktionen);
+        }
+
+        public Mihai_09(int s)
+        {
+            code = 0;
+            summe = s;
+            versuche = 0;
+        }
+
+        public Mihai_09(Mihai_09 s)
+        {
+            code = 0;
+            summe = 0;
+            versuche = 0;
+        }
+        public void Palindrom()
+        {
+            int anzahl = 0;
+            for (int i = 1; i <= 9; i++)
+            {
+                for (int j = 0; j <= 9; j++)
+                {
+                    if (2 * i + j == summe)
+                    {
+                        pali[anzahl] = 100 * i + 10 * j + i;
+                        anzahl++;
+                    }
+                }
+            }
+            code = randomPal(anzahl, pali);
+
+        }
+        public int randomPal(int anzahl, int[] pali)
+        {
+            int aux = r.Next(0, anzahl);
+            int nr = pali[aux];
+
+            Console.WriteLine("Der Code ist: " + nr + " " + aux);
+            return nr;
+        }
+
+        public void grmitte(int code)
+        {
+            if (code / 10 % 10 >= 5)
+                Console.Write("groser oder gleich 5");
+            else
+                Console.Write("kleiner als 5");
+            Console.WriteLine();
+        }
+        public void welcheZahl()
+        {
+            Console.WriteLine("Der Code ist ein dreistelliges Palindrom. Die Summe der Ziffern ist " + summe + ". Welche ist der Code?");
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine("Versuch " + i);
+                int var = Convert.ToInt32(Console.ReadLine());
+
+                if (var == code)
+                {
+                    Console.WriteLine("Richtig!");
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("Falsch!");
+
+                    versuche++;
+
+                    switch (versuche)
+                    {
+                        case 1:
+                            Console.WriteLine("Der Rest der Ziffer in der Mitte geteilt durch 2 ist: " + (code / 10) % 10 % 2);
+                            break;
+                        case 2:
+                            Console.WriteLine("Die mittlere Zahl ist:");
+                            grmitte(code);
+                            break;
+                        case 3:
+                            Console.WriteLine("Der Rest der letzter Zahl geteilt durch drei ist: " + code % 3);
+                            break;
+                        case 4:
+                            Console.WriteLine("Letzte Chance:");
+                            break;
+                    }
+                }
+            }
+
+            Console.WriteLine("Leider verloren! Der Code war " + code);
+        }
+    }
+
+}
+
