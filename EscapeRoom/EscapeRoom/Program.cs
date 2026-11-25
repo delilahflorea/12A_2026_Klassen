@@ -37,6 +37,10 @@ while (ct<8)
             break;
         case 4:
             //4
+            Sofia s = new Sofia();
+            s.SofiaMethode();
+            ct++;
+            geloest[4] = true;
             break;
         case 5:
             //5
