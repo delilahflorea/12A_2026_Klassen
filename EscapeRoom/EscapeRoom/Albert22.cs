@@ -34,17 +34,21 @@ namespace EscapeRoom
                 Console.WriteLine();
             }
 
-            Console.WriteLine("Gibt es einen eulerischen Zyklus in diesem Graphen? (ja/nein)");
-            string Antwort = Console.ReadLine();
-            
-            if(Antwort == "ja")
+            bool ersteAufgabeGeloest = false;
+            while (!ersteAufgabeGeloest)
             {
-                Console.WriteLine("Richtig! Es gibt einen eulerischen Zyklus.");
-            }
-            else
-            {
-                Console.WriteLine("Falsch! Es gibt einen eulerischen Zyklus.");
-                return;
+                Console.WriteLine("Gibt es einen eulerischen Zyklus in diesem Graphen? (ja/nein)");
+                string antwort = (Console.ReadLine() ?? string.Empty).Trim();
+
+                if (antwort.Equals("ja", StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine("Richtig! Es gibt einen eulerischen Zyklus.");
+                    ersteAufgabeGeloest = true;
+                }
+                else
+                {
+                    Console.WriteLine("Falsch! Versuchen Sie es erneut.");
+                }
             }
 
 
@@ -74,16 +78,21 @@ namespace EscapeRoom
             }
 
             // Vordefinierte minimale Lösung: genau eine Kante von 9 nach 0.
-            Console.WriteLine("Geben Sie die Kante als 1-2 Format ein:");
-            string input = Console.ReadLine();
+            bool zweiteAufgabeGeloest = false;
+            while (!zweiteAufgabeGeloest)
+            {
+                Console.WriteLine("Geben Sie die Kante als 1-2 Format ein:");
+                string input = (Console.ReadLine() ?? string.Empty).Trim();
 
-            if (input == "9-0")
-            {
-                Console.WriteLine("Richtig! Der Graph ist mit der minimalen Anzahl von Kanten stark konnex.");
-            }
-            else
-            {
-                Console.WriteLine("Falsch! Die minimale Lösung ist genau die Kante 9-0.");
+                if (input == "9-0")
+                {
+                    Console.WriteLine("Richtig! Der Graph ist mit der minimalen Anzahl von Kanten stark konnex.");
+                    zweiteAufgabeGeloest = true;
+                }
+                else
+                {
+                    Console.WriteLine("Falsch! Die minimale Lösung ist genau die Kante 9-0. Versuchen Sie es erneut.");
+                }
             }
         }
     }
