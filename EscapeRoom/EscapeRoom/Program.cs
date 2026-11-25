@@ -21,11 +21,11 @@ while (ct<8)
     {
         case 0:
             //Beispiel
-            Beispiel b = new Beispiel();
+            /*Beispiel b = new Beispiel();
             b.BeispielMethode();
             ct++;
             geloest[0] = true;
-            break;
+            break; */
         case 1:
             //1
             break;
@@ -87,7 +87,9 @@ while (ct<8)
             //20
             break;
         case 21:
-            //21
+            Stoica_21.Start();
+            ct++;
+            geloest[21] = true;
             break;
         case 22:
             //22
