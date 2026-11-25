@@ -42,7 +42,7 @@ namespace EscapeRoom
                 eingabe2 = Console.ReadLine();
                 if (eingabe2 == "v=d/t" || eingabe2 == "v = d / t")
                 {
-                    Console.WriteLine("Bine! Care este formula lui pitagora generalizat?");
+                    Console.WriteLine("Bine! Care este formula lui pitagora generalizat? ( alpha: α )");
                     eingabe3 = Console.ReadLine();
                     if (eingabe3 == "a^2 = b^2 + c^2 + 2bc * cos α" || eingabe3 == "a^2=b^2+c^2+2bc*cosα")
                     {
