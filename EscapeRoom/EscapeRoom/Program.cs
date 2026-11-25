@@ -1,4 +1,5 @@
 ﻿using EscapeRoom;
+using static EscapeRoom.Toader24;
 
 Console.WriteLine("Escape Room");
 
@@ -8,10 +9,10 @@ Console.WriteLine("Escape Room");
 int ct = 0;
 int antw = 0;
 bool[] geloest = new bool[28];
-while (ct<8)
+while (ct < 8)
 {
     Console.WriteLine("Klassennummereingabe (0-27):");
-    antw=Int32.Parse(Console.ReadLine());
+    antw = Int32.Parse(Console.ReadLine());
     if (antw >= 0 && antw < 28 && geloest[antw])
     {
         Console.WriteLine("Dieses Rätsel wurde bereits gelöst!");
@@ -95,9 +96,29 @@ while (ct<8)
         case 23:
             //23
             break;
+
         case 24:
-            //24
+
+            Zahlenschloss123 schloss = new Zahlenschloss123();
+
+            while (!schloss.Offen)
+            {
+                Console.WriteLine("Gib einen vierstelligen Code ein!");
+                Console.WriteLine("Der Code muss durch 13 teilbar sein.");
+                Console.WriteLine("Die Quersumme muss durch 3 teilbar sein.");
+
+                int s = Convert.ToInt32(Console.ReadLine());
+
+                schloss.Oeffnen(s);
+            }
+
+            ct++;
+            geloest[24] = true;
+
+            Console.WriteLine("Aufgabe 24 erfolgreich gelöst!");
+
             break;
+
         case 25:
             //25
             break;
@@ -110,7 +131,7 @@ while (ct<8)
         default:
             Console.WriteLine("Diese Klasse existiert nicht!");
             break;
-        }
     }
-Console.WriteLine("Herzlichen Glückwunsch!!!");
+}
+Console.WriteLine("Herzlichen Glückwunsch!");
 Console.WriteLine("Ihr habt den Escape Room geschafft!");
