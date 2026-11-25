@@ -42,7 +42,12 @@ while (ct<8)
             //5
             break;
         case 6:
-            //6
+            Huditan06 h = new Huditan06();
+            h.Mathe();
+            ct++;
+            geloest[6] = true;
+
+
             break;
         case 7:
             //7
@@ -112,5 +117,5 @@ while (ct<8)
             break;
         }
     }
-Console.WriteLine("Herzlichen Glückwunsch!!!");
+Console.WriteLine("Herzlichen Glückwunsch!");
 Console.WriteLine("Ihr habt den Escape Room geschafft!");
