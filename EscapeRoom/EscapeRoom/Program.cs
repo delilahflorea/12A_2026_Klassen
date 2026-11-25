@@ -14,15 +14,14 @@ while (ct<8)
     antw=Int32.Parse(Console.ReadLine());
     if (antw >= 0 && antw < 28 && geloest[antw])
     {
-        Console.WriteLine("Dieses Rätsel wurde bereits gelöst!");
-        continue;
+           continue;
     }
     switch (antw)
     {
         case 0:
             //Beispiel
             Beispiel b = new Beispiel();
-            b.BeispielMethode();
+            b.BeispielMethode2();
             ct++;
             geloest[0] = true;
             break;
@@ -79,6 +78,11 @@ while (ct<8)
             break;
         case 18:
             //18
+            Sabau18 r = new Sabau18();
+           // r.RobertMethode1();
+            r.RobertMethode2();
+            ct++;
+            geloest[18] = true;
             break;
         case 19:
             //19
@@ -112,5 +116,5 @@ while (ct<8)
             break;
         }
     }
-Console.WriteLine("Herzlichen Glückwunsch!!!");
+Console.WriteLine("Herzlichen Glückwunsch!");
 Console.WriteLine("Ihr habt den Escape Room geschafft!");
