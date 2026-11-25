@@ -37,7 +37,7 @@ while (ct<8)
             break;
         case 4:
             //4
-            Sofia4 s = new Sofia4();
+            Gabel4 s = new Gabel4();
             s.SofiaMethode();
             ct++;
             geloest[4] = true;

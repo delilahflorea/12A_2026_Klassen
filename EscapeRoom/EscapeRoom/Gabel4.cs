@@ -1,13 +1,13 @@
 ﻿namespace EscapeRoom
 {
     // der graf und ihre adjaze4nzmatrix soll schon ertesllt sein und das spielist das man auf die adjmatrix hinschauen soll und sagen ob 2 knoten adjazent sind 
-    internal class Sofia4
+    internal class Gabel4
     {
         private readonly int[,] adjazenzmatrix;
         private readonly int anzahlKnoten;
         private readonly Random zufallsgenerator;
 
-        public Sofia4()
+        public Gabel4()
         {
             adjazenzmatrix = new int[,]
             {
@@ -22,7 +22,7 @@
             zufallsgenerator = new Random();
         }
 
-        public Sofia4(Sofia4 vorlage)
+        public Gabel4(Gabel4 vorlage)
         {
             adjazenzmatrix = (int[,])vorlage.adjazenzmatrix.Clone();
             anzahlKnoten = vorlage.anzahlKnoten;
