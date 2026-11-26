@@ -100,6 +100,11 @@ while (ct<8)
             break;
         case 25:
             //25
+            Toderici25 t = new Toderici25();
+            t.Toderici25Methode();
+            Toderici25 t2 = new Toderici25(t.rightansw, t.wrongansw);
+            t2.Toderici25Methode2(t2.rightansw, t2.wrongansw);
+            ct++;
             break;
         case 26:
             //26
@@ -208,6 +213,11 @@ while (ct < 8)
             break;
         case 25:
             //25
+            Toderici25_abgeleitet t25 = new Toderici25_abgeleitet();
+            t25.Toderici25Methode();
+            t25.Toderici25Methode3();
+            ct++;
+            geloest[25] = true;
             break;
         case 26:
             //26
