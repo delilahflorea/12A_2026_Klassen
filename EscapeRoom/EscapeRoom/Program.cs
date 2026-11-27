@@ -8,10 +8,10 @@ Console.WriteLine("Escape Room");
 int ct = 0;
 int antw = 0;
 bool[] geloest = new bool[28];
-while (ct<8)
+while (ct < 8)
 {
     Console.WriteLine("Klassennummereingabe (0-27):");
-    antw=Int32.Parse(Console.ReadLine());
+    antw = Int32.Parse(Console.ReadLine());
     if (antw >= 0 && antw < 28 && geloest[antw])
     {
         Console.WriteLine("Dieses Rätsel wurde bereits gelöst!");
@@ -72,7 +72,14 @@ while (ct<8)
             //15
             break;
         case 16:
-            //16
+            Class1 level1 = new Class1();
+            level1.Herausforderung16();
+
+            Ploia16_2 level2 = new Ploia16_2();
+            level2.Loesung();
+
+            ct++;
+            geloest[16] = true;
             break;
         case 17:
             //17
@@ -110,7 +117,7 @@ while (ct<8)
         default:
             Console.WriteLine("Diese Klasse existiert nicht!");
             break;
-        }
     }
+}
 Console.WriteLine("Herzlichen Glückwunsch!!!");
 Console.WriteLine("Ihr habt den Escape Room geschafft!");
