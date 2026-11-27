@@ -63,7 +63,11 @@ while (ct<8)
             //12
             break;
         case 13:
-            //13
+            Nicula13 a = new Nicula13();
+            a.Nicula13methode();
+            a.Nicula13methode2_2();
+            ct++;
+            geloest[13] = true;
             break;
         case 14:
             //14
@@ -171,7 +175,10 @@ while (ct < 8)
             //12
             break;
         case 13:
-            //13
+            Nicula13Level2 level2 = new Nicula13Level2();
+            level2.Nicula13Level2methode();
+            ct++;
+            geloest[13] = true;
             break;
         case 14:
             //14
